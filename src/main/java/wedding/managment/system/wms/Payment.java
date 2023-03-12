@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "payment_gateway")
-public class PaymentGateway {
+@Table(name = "payment")
+public class Payment {
     @Id
     @Column(name = "payment_Id")
     public int paymentGatewayId;
