@@ -13,7 +13,6 @@ public class PaymentService {
     PaymentRepository paymentRepository;
     @Autowired
     EventRepository eventRepository;
-
     public String saveOrUpdate(PaymentModel paymentModel)throws Exception{
     Payment payment= new Payment();
     payment.setPaymentId(paymentModel.getPaymentId());
