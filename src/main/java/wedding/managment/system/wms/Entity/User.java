@@ -1,7 +1,6 @@
-package wedding.managment.system.wms;
+package wedding.managment.system.wms.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.List;
 
 @Data
@@ -12,20 +11,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private int userId;
-
     @Column(name = "user_name")
     private String username;
-
     @Column(name = "email")
     private String email;
-
     @Column(name = "phone_number")
-    private int phoneNumber;
-
-    @Column(name = "CNIC")
-    private int CNIC;
-
+    private String phoneNumber;
+    @Column(name = "cnic")
+    private String cnic;
     @OneToMany
     private List<EventRequest> eventrequestList;
-
 }
