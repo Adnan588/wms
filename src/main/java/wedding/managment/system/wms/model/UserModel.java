@@ -1,8 +1,10 @@
 package wedding.managment.system.wms.model;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import wedding.managment.system.wms.Entity.User;
 
 @Data
+@NoArgsConstructor
 public class UserModel
 {
     private int userId;

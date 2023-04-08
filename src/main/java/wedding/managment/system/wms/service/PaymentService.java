@@ -25,9 +25,6 @@ public class PaymentService {
     return  "Success";
     }
 
-   // public Payment savePayment(Payment payment) {
-   //     return paymentRepository.save(payment);
- //   }
     public Payment getPaymentById(int paymentId){
         return paymentRepository.findById(paymentId).get();
    }

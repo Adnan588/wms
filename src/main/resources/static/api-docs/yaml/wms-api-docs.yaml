@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  title: Weather API
+  description: Rest API for SyncLayer Logistic
+  version: 1.0.0
+  contact:
+    email: wadeb@discorp.com
+
+tags:
+  - name: Country
+    description: Endpoints for Country
+  - name: Forecast
+    description: Endpoints for Weather Forecasts
+
+paths:
+  /country/list:
+    get:
+      tags:
+        - Country
+      summary: Get list of countries
+      operationId: countryList
+      parameters:
+        - in: query
+          name: countryId
+          description: Unique reference of country record
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CountryModel'
+  /country/save:
+    post:
+      tags:
+        - Country
+      summary: Endpointt to save country
+      operationId: countrySave
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CountryModel'
+      responses:
+        '200':
+          description: Successful country record has been saved or updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CountryModel'
+
+components:
+
+  schemas:
+    CountryModel:
+      type: object
+      properties:
+        countryId:
+          type: integer
+          format: int64
+        countryName:
+          type: string
+

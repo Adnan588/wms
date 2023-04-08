@@ -15,11 +15,6 @@ public class PaymentController {
         return paymentService.saveOrUpdate(paymentModel);
     }
 
-  //  @PostMapping("/paymentAdd")
-   // public Payment addPayment(@RequestBody Payment payment){
-   //    return paymentService.savePayment(payment);
- //  }
-
     @GetMapping("payment(id)")
     public Payment findPaymentById(@PathVariable int paymentId){
        return paymentService.getPaymentById(paymentId);

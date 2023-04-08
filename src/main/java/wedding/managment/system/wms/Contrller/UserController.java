@@ -5,10 +5,11 @@ import wedding.managment.system.wms.model.UserModel;
 import wedding.managment.system.wms.service.UserService;
 
 @RestController
+@RequestMapping("/user")
 public class UserController{
     @Autowired
     UserService userService;
-    @PostMapping("/user")
+    @PostMapping("/save")
     private String saveUser(@RequestBody UserModel userModel) {
         return userService.saveOrUpdate(userModel);
     }
