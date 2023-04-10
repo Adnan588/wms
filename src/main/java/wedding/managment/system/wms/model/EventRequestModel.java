@@ -2,6 +2,8 @@ package wedding.managment.system.wms.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import wedding.managment.system.wms.Entity.EventRequest;
+import java.sql.Time;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -10,11 +12,11 @@ public class EventRequestModel{
     private int id;
     private String eventType;
     private int numOfGuest;
-    private String date;
+    private Date date;
     private String day;
     private String time;
-    private UserModel userId;
     private String status;
+    private UserModel userId;
 
     public EventRequestModel(EventRequest eventRequest)
     {
@@ -26,6 +28,4 @@ public class EventRequestModel{
         this.time = eventRequest.getTime();
         this.status = eventRequest.getStatus();
     }
-
-
 }

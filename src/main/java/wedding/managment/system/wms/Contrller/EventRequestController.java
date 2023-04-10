@@ -11,8 +11,13 @@ public class EventRequestController {
     EventRequestService eventRequestService;
 
     @PostMapping("/event-request")
-    private String saveEventRequest(@RequestBody EventRequestModel eventRequestModel) throws Exception{
-        return eventRequestService.saveOrUpdate(eventRequestModel);
+    private String saveEventRequest(@RequestBody EventRequestModel eventRequestModel) {
+        try{
+            return eventRequestService.saveOrUpdate(eventRequestModel);
+        }catch (Exception e){
+            return e.toString();
+        }
+
     }
 
     @GetMapping("/eventrequest")
@@ -35,6 +40,5 @@ public class EventRequestController {
         return eventRequestService.getEventRequestById(eventrequestId);
 
     }
-
 }
 

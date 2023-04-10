@@ -9,8 +9,8 @@ import wedding.managment.system.wms.model.UserModel;
 public class UserService{
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    EventRequestService eventRequestService;
+   // @Autowired
+   // EventRequestService eventRequestService;
 
     public String saveOrUpdate(UserModel userModel){
         User user=new User();

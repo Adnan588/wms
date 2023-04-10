@@ -1,9 +1,10 @@
 package wedding.managment.system.wms.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
+import java.util.Date;
 import java.util.List;
-@Data
 @Entity
+@Data
 @Table(name = "EventRequest")
 public class EventRequest {
     @Id
@@ -17,8 +18,9 @@ public class EventRequest {
     private String eventType;
     @Column(name = "num_of_guest")
     private int numOfGuest;
+   // @JsonTypeResolver("yyyy-mm-dd")
     @Column(name = "date")
-    private String date;
+    private Date date;
     @Column(name = "day")
     private String day;
     @Column(name = "time")

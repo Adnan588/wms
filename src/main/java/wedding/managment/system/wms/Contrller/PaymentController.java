@@ -11,22 +11,26 @@ public class PaymentController {
     PaymentService paymentService;
 
     @PostMapping("/payment")
-    private String savePayment(@RequestBody PaymentModel paymentModel)throws Exception {
-        return paymentService.saveOrUpdate(paymentModel);
+    private String savePayment(@RequestBody PaymentModel paymentModel){
+        try{
+            return paymentService.saveOrUpdate(paymentModel);
+        }catch (Exception e){
+            return e.toString();
+        }
     }
 
-    @GetMapping("payment(id)")
-    public Payment findPaymentById(@PathVariable int paymentId){
+    @GetMapping("/payment/{id}")
+    public Payment findPaymentById(@PathVariable(name = "id") int paymentId){
        return paymentService.getPaymentById(paymentId);
     }
 
-      @PutMapping("update")
+      @PutMapping("/payment/update")
         public Payment updatePayment(@RequestBody Payment payment){
        return paymentService.updatePayment(payment);
    }
 
-      @DeleteMapping("delete(ids)")
-    public  String deletePayment(@PathVariable int paymentId){
+      @DeleteMapping("/payment/delete/{id}")
+    public  String deletePayment(@PathVariable(name = "id") Integer paymentId){
         return paymentService.deletePayment(paymentId);
     }
 }
