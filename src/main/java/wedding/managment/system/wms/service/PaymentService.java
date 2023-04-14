@@ -17,7 +17,7 @@ public class PaymentService {
     Payment payment= new Payment();
     payment.setPaymentId(paymentModel.getPaymentId());
     payment.setTotalPayment(paymentModel.getTotalPayment());
-    payment.setTotalDue(paymentModel.getTotalDue());
+    payment.setAdvancePayment(paymentModel.getAdvancePayment());
     EventRequest eventRequest =  eventRepository.findById(paymentModel.getEventRequestModel()
             .getId()).orElseThrow( () -> new Exception("Event not found - " + paymentModel.getEventRequestModel().getId()));
     payment.setEventRequest(eventRequest);
@@ -33,6 +33,7 @@ public class PaymentService {
         paymentRepository.deleteById(paymentId);
         return "payment remove";
     }
+
    public Payment updatePayment(Payment payment){
        return paymentRepository.save(payment);
    }

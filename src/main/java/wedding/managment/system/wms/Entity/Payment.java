@@ -13,8 +13,8 @@ public class Payment {
     @ManyToOne
     @JoinColumn(name = "event_request_id")
     private EventRequest eventRequest;
-    @Column(name = "total_due")
-    private int totalDue;
+    @Column(name = "advance_payment")
+    private int advancePayment;
     @Column(name = "total_payment")
     private int totalPayment;
 }

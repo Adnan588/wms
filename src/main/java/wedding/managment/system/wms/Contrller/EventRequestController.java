@@ -20,25 +20,24 @@ public class EventRequestController {
 
     }
 
-    @GetMapping("/eventrequest")
+    @GetMapping("/event-request/list")
     public List<EventRequest> findAllEventRequest() {
         return eventRequestService.getEventRequest();
     }
 
-    @GetMapping("/eventrequest/{id}")
-    public EventRequest findeventrequestById(@PathVariable int eventId) {
+    @GetMapping("/event-request/{id}")
+    public EventRequest findeventrequestById(@PathVariable(name = "id") int eventId) {
         return eventRequestService.getEventRequestById(eventId);
     }
 
-    @DeleteMapping("delete/{id}")
-    public String deleteEventRequest(@PathVariable("id ") int eventId) {
+    @DeleteMapping("/delete/{id}")
+    public String deleteEventRequest(@PathVariable("id") int eventId) {
         return eventRequestService.deleteEventRequest(eventId);
     }
 
-    @GetMapping("event(id)")
-    public EventRequest findEventRequestById(@PathVariable int eventrequestId) {
-        return eventRequestService.getEventRequestById(eventrequestId);
-
+    @PutMapping("/event-request/update")
+    public EventRequest updatePayment(@RequestBody EventRequest eventRequest){
+        return eventRequestService.updateEventRequest(eventRequest);
     }
 }
 

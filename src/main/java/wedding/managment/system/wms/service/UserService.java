@@ -1,9 +1,12 @@
 package wedding.managment.system.wms.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import wedding.managment.system.wms.Entity.EventRequest;
 import wedding.managment.system.wms.Entity.User;
 import wedding.managment.system.wms.Repository.UserRepository;
 import wedding.managment.system.wms.model.UserModel;
+
+import java.util.List;
 
 @Service
 public class UserService{

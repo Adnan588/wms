@@ -18,7 +18,6 @@ public class EventRequest {
     private String eventType;
     @Column(name = "num_of_guest")
     private int numOfGuest;
-   // @JsonTypeResolver("yyyy-mm-dd")
     @Column(name = "date")
     private Date date;
     @Column(name = "day")
